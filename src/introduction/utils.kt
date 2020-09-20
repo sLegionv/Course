@@ -1,16 +1,15 @@
 package introduction
 
 
-fun getInputList(): List<String> {
+fun getInputList(args: Array<String>): List<String> {
+    if (args.isNotEmpty()) {
+        return args.toList()
+    }
     return readLine()!!.split(" ")
 }
 
-fun getCroppedInputList(): List<String> {
-    return getInputList().drop(1)
-}
-
-fun getCroppedSortedInputList(): List<String> {
-    return getCroppedInputList().sorted()
+fun getSortedInputList(args: Array<String>): List<String> {
+    return getInputList(args).sorted()
 }
 
 fun formatList(result_list:List<String>): String {

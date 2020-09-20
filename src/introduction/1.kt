@@ -1,5 +1,5 @@
 package introduction
 
 fun main(args: Array<String>) {
-    println(formatList(getCroppedInputList()))
+    println(formatList(getInputList(args)))
 }
