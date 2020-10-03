@@ -22,6 +22,6 @@ fun getMapKeyCount(list_words: List<String>): MutableMap<String, Int> {
     return map
 }
 
-fun printMap(map: MutableMap<String, Int>) {
+fun myPrintMap(map: MutableMap<String, Int>) {
     map.forEach{println("${it.key} ${it.value}")}
 }
