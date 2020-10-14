@@ -1,11 +1,9 @@
 package introduction
 
 
-fun getInputList(args: Array<String>): List<String> {
-    if (args.isNotEmpty()) {
-        return args.toList()
-    }
-    return readLine()!!.split(" ")
+fun getInputList(args: Array<String>) = when {
+    args.isNotEmpty() -> args.toList()
+    else -> readLine()!!.split(" ")
 }
 
 fun getSortedInputList(args: Array<String>): List<String> {
