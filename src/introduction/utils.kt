@@ -6,13 +6,11 @@ fun getInputList(args: Array<String>) = when {
     else -> readLine()!!.split(" ")
 }
 
-fun getSortedInputList(args: Array<String>): List<String> {
-    return getInputList(args).sorted()
-}
+fun getSortedInputList(args: Array<String>) = getInputList(args).sorted()
 
-fun formatList(result_list: List<String>): String {
-    return result_list.joinToString(separator = "\n")
-}
+
+fun formatList(result_list: List<String>) = result_list.joinToString(separator = "\n")
+
 
 fun getMapKeyCount(list_words: List<String>): MutableMap<String, Int> {
     val map: MutableMap<String, Int> = mutableMapOf()
@@ -20,6 +18,4 @@ fun getMapKeyCount(list_words: List<String>): MutableMap<String, Int> {
     return map
 }
 
-fun myPrintMap(map: MutableMap<String, Int>) {
-    map.forEach { println("${it.key} ${it.value}") }
-}
+fun myPrintMap(map: MutableMap<String, Int>) = map.forEach { println("${it.key} ${it.value}") }
