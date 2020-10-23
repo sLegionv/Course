@@ -1,16 +1,20 @@
 package introduction
 
 
-fun getInputList(args: Array<String>) = when {  // Обработка ввода
+// Обработка ввода
+fun getInputList(args: Array<String>) = when {
     args.isNotEmpty() -> args.toList()
     else -> readLine()!!.split(" ")
 }
 
-fun getSortedInputList(args: Array<String>) = getInputList(args).sorted()  // Обработка ввода с сортировкой
+// Обработка ввода с сортировкой
+fun getSortedInputList(args: Array<String>) = getInputList(args).sorted()
 
-fun formatList(resultList: List<String>) = resultList.joinToString(separator = "\n")  // Вывод массива
+// Форматирование массива
+fun formatList(resultList: List<String>) = resultList.joinToString(separator = "\n")
 
 // Словарь; ключ - слово, значение - количество слов
 fun getMapWordCount(listWords: List<String>) = listWords.groupingBy { it }.eachCount().toMutableMap()
 
-fun myPrintMap(map: Map<String, Int>) = map.forEach { println("${it.key} ${it.value}") }  // Вывод словаря
+// Вывод словаря
+fun myPrintMap(map: Map<String, Int>) = map.forEach { println("${it.key} ${it.value}") }
