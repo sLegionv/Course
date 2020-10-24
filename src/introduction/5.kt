@@ -2,6 +2,6 @@ package introduction
 
 fun main(args: Array<String>) {
     val words: List<String> = getSortedInputList(args)
-    val map: MutableMap<String, Int> = getMapWordCount(words)
-    myPrintMap(map.toSortedMap(compareBy({ -map[it]!! }, { it })))
+    val map: Map<String, Int> = getMapWordCount(words)
+    myPrintMap(map.toSortedMap(compareBy({ -map.getValue(it) }, { it })))
 }

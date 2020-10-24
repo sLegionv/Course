@@ -1,5 +1,7 @@
 #!/bin/bash
-kotlinc utils.kt -cp -include-runtime -d utils.jar
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/src/introduction"
+kotlinc "$DIR"/utils.kt -cp -include-runtime -d utils.jar
+echo YES
 declare -A tests
 tests["1"]="the quick brown fox jumps over the lazy dog:the\nquick\nbrown\nfox\njumps\nover\nthe\nlazy\ndog"
 tests["2"]="the quick brown fox jumps over the lazy dog:brown\ndog\nfox\njumps\nlazy\nover\nquick\nthe\nthe"
@@ -12,7 +14,8 @@ do
   IFS=':'; testArgs=(${tests[$fileName]}); unset IFS;
   echo "Programs testing $fileName"
   echo "Response:"
-  ./RUN.sh "$fileName" "${testArgs[0]}"
+  ./RUN.sh "$fileName" "$DIR" "${testArgs[0]}"
   echo "Correct response:"
   echo -e "${testArgs[1]}"
 done
+exec $SHELL
